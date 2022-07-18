@@ -20,8 +20,7 @@ const App = () => {
                 <div className='flex relative dark:bg-main-dark-bg'>
                     <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
                         <TooltipComponent content="Settings" position="Top">
-                            <button type='button' className='text-3xl p-3
-                                hover:drop-shadow-xl hover:bg-light-gray text-white'
+                            <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
                                 style={{ background: 'blue', borderRadius: '50%' }}>
                                 <FiSettings />
                             </button>
@@ -42,31 +41,31 @@ const App = () => {
                         <div className='fixed md:static bgimain-bg dark:bg-main-dark-bg navbar w-full'>
                             <Navbar />
                         </div>
-                    </div>
-                    <div>
-                        <Routes>
-                            {/* Dashboard */}
-                            <Route path='/' element={<ECommerce />} />
-                            <Route path='/ecommerce' element={<ECommerce />} />
-                            {/* Pages */}
-                            <Route path='/orders' element={<Orders />} />
-                            <Route path='/employees' element={<Employees />} />
-                            <Route path='/customers' element={<Customers />} />
-                            {/* Apps */}
-                            <Route path='/kanban' element={<Kanban />} />
-                            <Route path='/editor' element={<Editor />} />
-                            <Route path='/Calender' element={<Calendar />} />
-                            <Route path='/color-picker' element={<ColorPicker />} />
-                            {/* Charts */}
-                            <Route path='/line' element={<Line />} />
-                            <Route path='/area' element={<Area />} />
-                            <Route path='/bar' element={<Bar />} />
-                            <Route path='/financial' element={<Financial />} />
-                            <Route path='/color-mapping' element={<ColorMapping />} />
-                            <Route path='/pyramid' element={<Pyramid />} />
-                            <Route path='/pir' element={<Pie />} />
-                            <Route path='/stacked' element={<Stacked />} />
-                        </Routes>
+                        <div>
+                            <Routes>
+                                {/* Dashboard */}
+                                <Route path='/' element={<ECommerce />} />
+                                <Route path='/ecommerce' element={<ECommerce />} />
+                                {/* Pages */}
+                                <Route path='/orders' element={<Orders />} />
+                                <Route path='/employees' element={<Employees />} />
+                                <Route path='/customers' element={<Customers />} />
+                                {/* Apps */}
+                                <Route path='/kanban' element={<Kanban />} />
+                                <Route path='/editor' element={<Editor />} />
+                                <Route path='/Calender' element={<Calendar />} />
+                                <Route path='/color-picker' element={<ColorPicker />} />
+                                {/* Charts */}
+                                <Route path='/line' element={<Line />} />
+                                <Route path='/area' element={<Area />} />
+                                <Route path='/bar' element={<Bar />} />
+                                <Route path='/financial' element={<Financial />} />
+                                <Route path='/color-mapping' element={<ColorMapping />} />
+                                <Route path='/pyramid' element={<Pyramid />} />
+                                <Route path='/pir' element={<Pie />} />
+                                <Route path='/stacked' element={<Stacked />} />
+                            </Routes>
+                        </div>
                     </div>
                 </div>
             </BrowserRouter>
