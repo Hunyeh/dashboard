@@ -1,9 +1,12 @@
 import React from 'react';
 import {  GridComponent, ColumnsDirective, Page, Search, Inject, ColumnDirective, Toolbar } from '@syncfusion/ej2-react-grids';
-import { employeesData, contextMenuItems, employeesGrid } from "../data/data/dummy";
+import { employeesData, employeesGrid } from "../data/data/dummy";
 import { Header } from '../components';
 
 const Employees = () => {
+  const toolbarOptions = ['Search'];
+  const editing = { allowDeleting: true, allowEditing: true }
+
   return (
     <div className='margin-2 md:margin-10 p-2 md:p-10 bg- white rounded-3xl'>
       <Header category='Page' title='Employees' />
@@ -11,13 +14,13 @@ const Employees = () => {
         dataSource={employeesData}
         allowPaging
         allowSorting
-        toolbar={['Search']}
+        toolbar={toolbarOptions}
         width='auto'
+        pageSettings={{ pageCount : 5 }}
+        editSettings={editing}
       >
         <ColumnsDirective>
-          {employeesGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
-          ))}
+          {employeesGrid.map((item, index) => <ColumnDirective key={index} {...item} /> )}
         </ColumnsDirective>
         <Inject services={[Page, Search, Toolbar]} />
       </GridComponent>
@@ -25,4 +28,4 @@ const Employees = () => {
   )
 }
 
-export default Employees
+export default Employees;

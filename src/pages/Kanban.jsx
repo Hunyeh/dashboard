@@ -14,13 +14,11 @@ const Kanban = () => {
         keyField='Status'
       >
         <ColumnsDirective>
-          {kanbanGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
-          ))}
+          {kanbanGrid.map((item, index) => <ColumnDirective key={index} {...item} /> )}
         </ColumnsDirective>
       </KanbanComponent>
     </div>
   )
 }
 
-export default Kanban
+export default Kanban;

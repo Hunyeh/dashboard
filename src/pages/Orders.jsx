@@ -4,6 +4,8 @@ import { ordersData, contextMenuItems, ordersGrid } from "../data/data/dummy";
 import { Header } from '../components';
 
 const Orders = () => {
+  const editing = { allowDeleting: true, allowEditing: true }
+
   return (
     <div className='margin-2 md:margin-10 p-2 md:p-10 bg- white rounded-3xl'>
       <Header category='Page' title='Orders' />
@@ -12,11 +14,13 @@ const Orders = () => {
         dataSource={ordersData}
         allowPaging
         allowSorting
+        allowExcelExport
+        allowPdfExport
+        contextMenuItems={contextMenuItems}
+        editSettings={editing}
       >
         <ColumnsDirective>
-          {ordersGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
-          ))}
+          {ordersGrid.map((item, index) => <ColumnDirective key={index} {...item} /> )}
         </ColumnsDirective>
         <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport]} />
       </GridComponent>
@@ -24,4 +28,4 @@ const Orders = () => {
   )
 }
 
-export default Orders
+export default Orders;
